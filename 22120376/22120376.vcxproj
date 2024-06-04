@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClInclude Include="Helper.h" />
     <ClInclude Include="PhepTinh.h" />
+    <ClInclude Include="Stack.h" />
     <ClInclude Include="TrungTo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
