@@ -4,16 +4,14 @@
 #include<vector>
 #include<sstream>
 #include<stack>
+#include<fstream>
 #include"PhepTinh.h"
-
-using namespace std;
 
 
 
 
 
 vector<string> split(string s);
-
 int precedence(char op);
-
 string applyOp(string a, string b, char op);
+string ChuanHoa(string infix);

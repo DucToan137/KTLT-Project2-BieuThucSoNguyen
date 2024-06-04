@@ -59,3 +59,28 @@ string applyOp(string a, string b, char op) {
 	case ':': return Thuong(a, b);
 	}
 }
+
+string ChuanHoa(string infix) {
+	vector<string> tokens = split(infix);
+	string result = "";
+	stringstream builder;
+
+	for (int i = 0; i < tokens.size(); i++) {
+		if (tokens[i] == "(") {
+			builder << tokens[i];
+		}
+		else {
+			builder << tokens[i] << " ";
+		}
+	
+		
+	}
+	result = builder.str();
+
+	for (int i = 0; i < result.length(); i++) {
+		if (result[i] == ')') {
+			result.erase(i - 1, 1);
+		}
+	}
+	return result;
+}
