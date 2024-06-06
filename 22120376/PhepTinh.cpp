@@ -69,8 +69,6 @@ int compare(string a, string b) {
 }
 
 // CỘNG 2 SỐ NGUYÊN LỚN
-// cộng 2 số dương (X)
-// cộng 2 số trái dấu (X)
 string Tong(string a, string b) {
 
 	// a = 0
@@ -133,7 +131,6 @@ string Tong(string a, string b) {
 
 
 // TRỪ 2 SỐ NGUYÊN LỚN
-// 2 số nguyên > 0
 string Hieu(string a, string b) {
 	// a = b
 	if (a == b) {
@@ -263,7 +260,7 @@ string Tich(string a, string b) {
 
 	reverse(result.begin(), result.end());
 
-	size_t startpos = result.find_first_not_of('0');
+	int startpos = result.find_first_not_of('0');
 	if (string::npos != startpos) {
 		result = result.substr(startpos);
 	}
@@ -304,25 +301,24 @@ string Thuong(string a, string b) {
 	}
 
 	string result;
-	string current;
+	string tmp;
 
 	for (size_t i = 0; i < a.length(); ++i) {
-		current += a[i];
+		tmp += a[i];
 
-		// Loại bỏ các số 0 dẫn đầu từ current
-		while (current.length() > 1 && current[0] == '0') {
-			current.erase(0, 1);
+
+		while (tmp.length() > 1 && tmp[0] == '0') {
+			tmp.erase(0, 1);
 		}
 
 		size_t count = 0;
-		while (compare(current, b) >= 0) {
-			current = Hieu(current, b);
+		while (compare(tmp, b) >= 0) {
+			tmp = Hieu(tmp, b);
 			count++;
 		}
 		result += to_string(count);
 	}
 
-	// Loại bỏ các số 0 dẫn đầu trong kết quả
 
 	while (result.length() > 1 && result[0] == '0') {
 		result.erase(0, 1);

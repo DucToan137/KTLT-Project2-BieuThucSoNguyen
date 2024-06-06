@@ -3,7 +3,6 @@
 #include<string>
 #include<vector>
 #include<sstream>
-#include<stack>
 #include<fstream>
 #include"PhepTinh.h"
 
