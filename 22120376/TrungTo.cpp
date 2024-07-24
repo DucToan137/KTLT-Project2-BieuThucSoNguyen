@@ -94,6 +94,24 @@ string evaluate(string infix) {
 	return Top(values);
 
 }
+
+
+void GhiFile(string filename, vector<string>input) {
+	ofstream out;
+	out.open(filename);
+
+	if (!out.is_open()) {
+		cout << "Khong the mo file\n";
+		return;
+	}
+
+	for (int i = 0; i < input.size(); i++) {
+		out << input[i] << "\n";
+	}
+
+
+}
+
 void DocFile(string filename) {
 	vector<string> inputs;
 	vector<string>result;
@@ -117,6 +135,8 @@ void DocFile(string filename) {
 		//cout << tmp << "\n";
 		result.push_back(tmp);
 	}
+
+	GhiFile("output.txt", result);
 
 	for(int i = 0; i < inputs.size(); i++){
 		cout << "Bieu thuc " << i + 1 << ":\n"; 
